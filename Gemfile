@@ -50,4 +50,6 @@ end
 
 gem 'pg', group: :production
 
+gem 'devise'
+
 ruby '2.3.0'
