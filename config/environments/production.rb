@@ -81,14 +81,14 @@ Rails.application.configure do
   #ajoue config mailgun
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :authentication => :plain,
-  :address => "smtp.mailgun.org",
-  :port => 587,
-  :domain => "sandbox80a90de208044920bd014ab5ddd9f416.mailgun.org",
-  :user_name => "postmaster@sandbox80a90de208044920bd014ab5ddd9f416.mailgun.org",
-  :password => "758659a7d074c71edf5ca83c4939158e"
-}
+    :authentication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 587,
+    :domain => "sandbox80a90de208044920bd014ab5ddd9f416.mailgun.org",
+    :user_name => "postmaster@sandbox80a90de208044920bd014ab5ddd9f416.mailgun.org",
+    :password => "758659a7d074c71edf5ca83c4939158e"
+  }
 
   #ligne mailGun
-  config.action_mailer.default_url_options = { host: 'https://arcane-meadow-27125.herokuapp.com', port: 587}
+  config.action_mailer.default_url_options = { host: 'https://arcane-meadow-27125.herokuapp.com' }
 end
