@@ -54,4 +54,8 @@ gem 'devise'
 
 gem 'mailgun-ruby', '~>1.1.2'
 
+gem "administrate", "~> 0.3.0"
+
+gem "bourbon"
+
 ruby '2.3.0'
