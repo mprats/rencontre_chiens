@@ -52,4 +52,6 @@ gem 'pg', group: :production
 
 gem 'devise'
 
+gem 'mailgun-ruby', '~>1.1.2'
+
 ruby '2.3.0'
