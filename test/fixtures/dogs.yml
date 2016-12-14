@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  breed: MyText
+  birthdate: 2016-12-13
+  gender: MyText
+
+two:
+  name: MyText
+  breed: MyText
+  birthdate: 2016-12-13
+  gender: MyText
