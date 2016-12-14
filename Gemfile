@@ -58,4 +58,9 @@ gem "administrate", "~> 0.3.0"
 
 gem "bourbon"
 
+# DESIGN
+gem 'bootstrap-sass', '~> 3.3.6'
+
+
+
 ruby '2.3.0'
