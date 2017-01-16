@@ -1,8 +1,10 @@
 <div class ="background-home">
-    <div class="container"
-        <h1>Editing Dog</h1>
+    <div class = "welcome_shearch">
+        <h1>Edition Chien</h1>
+        
         <%= render 'form' %>
-        <%= link_to 'Show', @dog %> |
-        <%= link_to 'Back', dogs_path %>
+        
+        <%= link_to 'Montrer', dog_path(@dog) %> |
+        <%= link_to 'Retour', dogs_path %>
     </div>
 </div>

@@ -1,10 +1,11 @@
 class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:show]
+  
   # GET /dogs
   # GET /dogs.json
   def index
-    @dogs = Dog.all
+    @dogs = current_user.dogs
   end
 
   # GET /dogs/1
@@ -25,6 +26,7 @@ class DogsController < ApplicationController
   # POST /dogs.json
   def create
     @dog = Dog.new(dog_params)
+    @dog.user_id = current_user.id;
 
     respond_to do |format|
       if @dog.save
@@ -66,6 +68,7 @@ class DogsController < ApplicationController
     def set_dog
       @dog = Dog.find(params[:id])
     end
+    
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dog_params

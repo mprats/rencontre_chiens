@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161213154455) do
+ActiveRecord::Schema.define(version: 20170115144234) do
 
   create_table "dogs", force: :cascade do |t|
     t.text     "name"
@@ -20,14 +20,10 @@ ActiveRecord::Schema.define(version: 20161213154455) do
     t.text     "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
-  create_table "owners", force: :cascade do |t|
-    t.text     "first_name"
-    t.text     "last_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  add_index "dogs", ["user_id"], name: "index_dogs_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -47,6 +43,14 @@ ActiveRecord::Schema.define(version: 20161213154455) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.boolean  "admin"
+    t.text     "first_name"
+    t.text     "last_name"
+    t.date     "birthdate"
+    t.text     "phone_number"
+    t.text     "gender"
+    t.text     "country"
+    t.text     "street"
+    t.text     "postal_code"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

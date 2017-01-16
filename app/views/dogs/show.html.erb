@@ -1,29 +1,29 @@
 <div class ="background-home">
-    <div class = "container"
+    <div class = "welcome_shearch">
         <p id="notice"><%= notice %></p>
         
         <p>
-            <strong>Name :</strong>
+            <strong>Nom :</strong>
             <%= @dog.name %>
         </p>
         
         <p>
-            <strong>Breed :</strong>
+            <strong>Race :</strong>
             <%= @dog.breed %>
         </p>
         
         <p>
-            <strong>Birthdate :</strong>
+            <strong>Date de Naissance :</strong>
             <%= @dog.birthdate %>
         </p>
         
         <p>
-            <strong>Gender :</strong>
+            <strong>Genre :</strong>
             <%= @dog.gender %>
         </p>
         
         
-        <%= link_to 'Edit', edit_dog_path(@dog) %> |
-        <%= link_to 'Back', dogs_path %>
+        <%= link_to 'Editer', edit_dog_path(@dog) %> |
+        <%= link_to 'Retour', dogs_path %>
     </div>
 </div>
