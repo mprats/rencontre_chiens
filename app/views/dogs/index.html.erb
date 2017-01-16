@@ -1,27 +1,35 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Dogs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @dogs.each do |dog| %>
+<div class ="background-home">
+  <div class="container">
+  <p id="notice"><%= notice %></p>
+  
+  <h1>Liste des chiens</h1>
+  
+  <div class="welcome_shearch">
+  <table>
+    <thead>
       <tr>
-        <td><%= dog.name %></td>
-        <td>(<%= dog.breed %>)</td>
-        <td><%= link_to 'Show', dog %></td>
-        <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
-        <td><%= link_to 'Destroy', dog_url(dog), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Dog', new_dog_path %>
+    </thead>
+  
+  
+    <tbody>
+      <% @dogs.each do |dog| %>
+        <tr>
+            <td><%= dog.name %></td>
+            <td class="pading">(<%= dog.breed %>)</td>
+            <td class="pading"><%= link_to 'Montrer', dog %></td>
+            <td class="pading"><%= link_to 'Editer', edit_dog_path(dog) %></td>
+            <td class="pading"><%= link_to 'Supprimer', dog, method: :delete, data: { confirm: 'Etes vous sur?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+ 
+  
+  <br>
+  
+  <%= link_to 'Nouveau Chiens', new_dog_path %>
+  </div>
+   </div>
+</div>

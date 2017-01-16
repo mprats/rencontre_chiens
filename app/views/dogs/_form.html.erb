@@ -12,26 +12,24 @@
   <% end %>
   
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :Nom %><br>
     <%= f.text_field :name %>
   </div>
   
   <div class="field">
-    <%= f.label :breed %><br>
+    <%= f.label :Race %><br>
     <%= f.text_field :breed %>
   </div>
   
   <div class="field">
-    <%= f.label :birthdate %><br>
+    <%= f.label :Date_de_Naissance %><br>
     <%= f.date_select :birthdate, {order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year - 50} %>
   </div>
   
   <div class="field">
-    <%= f.label :gender %><br>
+    <%= f.label :Genre %><br>
     <%= f.select :gender, ['Male', 'Female'] %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.submit 'Valider', class: 'btn btn-success navbar-btn' %>
 <% end %>

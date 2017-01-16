@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="nav-bar-unmargin-bottom ">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -8,24 +8,24 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-     <%= link_to I18n.t('views.application.name', default: 'default'), root_path, class: 'navbar-brand' %>
+     <%= link_to I18n.t('views.application.name', default: 'default'), root_path, class: 'text_white_logo' %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to 'Vos chiens', dogs_path %></li>
-        <li><%= link_to 'Votre profil', edit_user_registration_path %></li>
-        <li><%= link_to 'Propositions', root_path %></li>
+        <li><%= link_to 'Vos chiens', dogs_path, :class =>'text_white' %></li>
+        <li><%= link_to 'Votre Profil', edit_user_registration_path, :class =>'text_white' %></li>
+        <li><%= link_to 'Propositions', root_path, :class =>'text_white' %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? == true %> 
-          <li><%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, :class =>'text_white' %></li>
           <% if current_user.try(:admin) %>
-            <li><%= link_to 'Administrations', admin_root_path %></li>
+            <li><%= link_to 'Administrations', admin_root_path , :class =>'text_white' %></li>
           <% end %>
         <% else %>
-          <li><%= link_to 'Connexion', new_user_session_path %></li>
+          <li><%= link_to('Connexion', new_user_session_path, :class =>'text_white') %></li>
         <% end %>
         
       </ul>

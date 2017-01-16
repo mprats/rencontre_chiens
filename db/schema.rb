@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20170116150159) do
 
   add_index "dogs", ["user_id"], name: "index_dogs_on_user_id"
 
+
   create_table "messages", force: :cascade do |t|
     t.text     "body"
     t.integer  "conversation_id"
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170116150159) do
 
   add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id"
   add_index "messages", ["user_id"], name: "index_messages_on_user_id"
+
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
