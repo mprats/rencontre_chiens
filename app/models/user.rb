@@ -4,5 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
          
+  validates_presence_of :first_name, :last_name, :birthdate, :phone_number, :gender, :country, :street, :postal_code
+         
   has_many :dogs
 end
