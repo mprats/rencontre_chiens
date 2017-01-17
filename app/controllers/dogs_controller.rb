@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: [:show, :edit, :update, :destroy]
+  before_action :set_dog, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show]
   
   # GET /dogs
@@ -23,6 +23,10 @@ class DogsController < ApplicationController
   # GET /dogs/1
   # GET /dogs/1.json
   def show
+    @dog = Dog.find(params[:id])
+    @pictures = @dog.pictures
+    @age = Date.today.year - @dog.birthdate.year
+    @age -= 1 if Date.today < @dog.birthdate + @age.years
   end
 
   # GET /dogs/new
@@ -32,6 +36,7 @@ class DogsController < ApplicationController
 
   # GET /dogs/1/edit
   def edit
+      @pictures = @dog.pictures
   end
 
   # POST /dogs
@@ -42,7 +47,14 @@ class DogsController < ApplicationController
 
     respond_to do |format|
       if @dog.save
-        format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
+        
+        if params[:images]
+          params[:images].each { |image|
+            @dog.pictures.create(image: image)
+          }
+        end
+        
+        format.html { redirect_to @dog, notice: 'Le chien a bien été mis à jour.' }
         format.json { render :show, status: :created, location: @dog }
       else
         format.html { render :new }
@@ -56,7 +68,14 @@ class DogsController < ApplicationController
   def update
     respond_to do |format|
       if @dog.update(dog_params)
-        format.html { redirect_to @dog, notice: 'Dog was successfully updated.' }
+        
+        if params[:images]
+          params[:images].each { |image|
+            @dog.pictures.create(image: image)
+          }
+        end
+        
+        format.html { redirect_to @dog, notice: 'Le chien a bien été mis à jour.' }
         format.json { render :show, status: :ok, location: @dog }
       else
         format.html { render :edit }
@@ -78,7 +97,9 @@ class DogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dog
-      @dog = Dog.find(params[:id])
+      if user_signed_in? 
+        @dog = current_user.dogs.find(params[:id])
+      end
     end
     
 

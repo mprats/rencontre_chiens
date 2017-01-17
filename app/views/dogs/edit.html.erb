@@ -4,6 +4,19 @@
         
         <%= render 'form' %>
         
+        <% if @pictures.present? %>
+            <h2>Pictures</h2>
+            
+            <% unless @pictures.empty? %>
+              <% @pictures.each do |pic| %>
+                <div>
+                  <%= image_tag pic.image.url %><br />
+                  <%= link_to 'Supprimer la photo', dog_picture_path(@dog, pic), method: :delete, data: { confirm: 'Etes vous sur ?' } %>
+                </div>
+              <% end %>
+            <% end %>
+        <% end %>
+        
         <%= link_to 'Montrer', dog_path(@dog) %> |
         <%= link_to 'Retour', dogs_path %>
     </div>

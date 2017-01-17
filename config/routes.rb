@@ -8,16 +8,20 @@ Rails.application.routes.draw do
   root 'welcome#index'
   devise_for :users, :controllers => { registrations: 'users/registrations' }
   
+  resources :users, :only => [:show]
   
-  #resource :user do
-    #resources :dogs
-  #end
+  resources :dogs do
+    resources :pictures, :only => [:destroy]
+  end
   
   resources :dogs do
     collection do
       get 'results'
       get 'search'
     end
+
+  resources :conversations do
+    resources :messages
   end
 
  

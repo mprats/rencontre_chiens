@@ -15,8 +15,8 @@
         </p>
         
         <p>
-            <strong>Date de Naissance :</strong>
-            <%= @dog.birthdate %>
+            <strong>Age :</strong>
+            <%= pluralize(@age, "an") %>
         </p>
         
         <p>
@@ -25,7 +25,24 @@
         </p>
         
         
-        <%= link_to 'Editer', edit_dog_path(@dog) %> |
+        <% if @pictures.present? %>
+        
+          <h2>Photos</h2>
+          
+          
+          <% unless @pictures.empty? %>
+            <% @pictures.each do |pic| %>
+              <div>
+                <%= image_tag pic.image.url %>
+              </div>
+            <% end %>
+          <% end %>
+        
+        <% end %>
+        
+        <% if user_signed_in? and (current_user.id == @dog.user_id) %>
+            <%= link_to 'Editer', edit_dog_path(@dog) %> |
+        <% end %>
         <%= link_to 'Retour', dogs_path %>
     </div>
 </div>

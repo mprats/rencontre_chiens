@@ -63,4 +63,7 @@ gem 'mailboxer'
 #Moteur de recherche
 gem 'ransack'
 
+gem "paperclip", "~> 5.0.0"
+
+
 ruby '2.3.0'

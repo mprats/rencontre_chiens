@@ -5,7 +5,7 @@
 
   <br>
   <div class="welcome_shearch">
-    <h1>Liste des chiens</h1>
+    <h1>Vos chiens</h1>
   <table>
     <thead>
       <tr>
@@ -21,7 +21,7 @@
             <td class="pading">(<%= dog.breed %>)</td>
             <td class="pading"><%= link_to 'Montrer', dog %></td>
             <td class="pading"><%= link_to 'Editer', edit_dog_path(dog) %></td>
-            <td class="pading"><%= link_to 'Supprimer', dog, method: :delete, data: { confirm: 'Etes vous sur?' } %></td>
+            <td class="pading"><%= link_to 'Supprimer', dog, method: :delete, data: { confirm: 'Etes vous sur ?' } %></td>
         </tr>
       <% end %>
     </tbody>
@@ -30,7 +30,7 @@
   
   <br>
   
-  <%= link_to 'Nouveau Chiens', new_dog_path %>
+  <%= link_to 'Nouveau chien', new_dog_path %>
   </div>
    </div>
 </div>
