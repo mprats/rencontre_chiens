@@ -23,6 +23,22 @@
         </p>
         
         
+        <% if @pictures.present? %>
+        
+          <h2>Pictures</h2>
+          
+          
+          <% unless @pictures.empty? %>
+            <% @pictures.each do |pic| %>
+              <div>
+                <%= image_tag pic.image.url %>
+              </div>
+            <% end %>
+          <% end %>
+        
+        <% end %>
+        
+        
         <%= link_to 'Editer', edit_dog_path(@dog) %> |
         <%= link_to 'Retour', dogs_path %>
     </div>
