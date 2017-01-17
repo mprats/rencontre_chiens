@@ -1,23 +1,29 @@
 <div class ="background-home">
-    <div class = "welcome_shearch">
-        <h1>Edition Chien</h1>
-        
-        <%= render 'form' %>
-        
-        <% if @pictures.present? %>
-            <h2>Pictures</h2>
-            
-            <% unless @pictures.empty? %>
-              <% @pictures.each do |pic| %>
-                <div>
-                  <%= image_tag pic.image.url %><br />
-                  <%= link_to 'Supprimer la photo', dog_picture_path(@dog, pic), method: :delete, data: { confirm: 'Etes vous sur ?' } %>
-                </div>
+  <div class="container">
+    </br>
+      <div class = "welcome_shearch">
+          <h1>Editer le chien</h1>
+          
+          <%= render 'form' %>
+          
+          <% if @pictures.present? %>
+              <h2>Photos</h2>
+              
+              <% unless @pictures.empty? %>
+                <% @pictures.each do |pic| %>
+                  <div>
+                    <%= image_tag pic.image.url %><br />
+                    <%= link_to 'Supprimer la photo', dog_picture_path(@dog, pic), method: :delete,
+                                                      data: { confirm: 'Etes vous sur ?' },
+                                                      class: 'btn btn-primary btn-sm' %>
+                  </div>
+                  <br>
+                <% end %>
               <% end %>
-            <% end %>
-        <% end %>
-        
-        <%= link_to 'Montrer', dog_path(@dog) %> |
-        <%= link_to 'Retour', dogs_path %>
+          <% end %>
+          
+          <%= link_to 'Montrer', dog_path(@dog), class: 'btn btn-primary btn-xs' %> |
+          <%= link_to 'Retour', dogs_path, class: 'btn btn-primary btn-xs' %>
+      </div>
     </div>
 </div>

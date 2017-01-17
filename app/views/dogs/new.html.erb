@@ -1,11 +1,14 @@
 <div class ="background-home">
-    <div class="welcome_shearch">
-        <div class="container">
-            <h1>New Dog</h1>
-            
-            <%= render 'form' %>
-            
-            <%= link_to 'Retour', dogs_path %>
+    <div class="container">
+        </br>
+        <div class="welcome_shearch">
+            <div class="container">
+                <h1>Ajouter un nouveau chien</h1>
+                
+                <%= render 'form' %>
+                
+                <%= link_to 'Retour', dogs_path, class: 'btn btn-primary btn-xs' %>
+            </div>
         </div>
     </div>
 </div>
