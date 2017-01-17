@@ -12,13 +12,11 @@ Rails.application.routes.draw do
   
   resources :dogs do
     resources :pictures, :only => [:destroy]
-  end
-  
-  resources :dogs do
     collection do
       get 'results'
       get 'search'
     end
+  end
 
   resources :conversations do
     resources :messages
