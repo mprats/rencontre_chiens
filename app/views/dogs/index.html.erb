@@ -19,9 +19,11 @@
         <tr>
             <td><%= dog.name %></td>
             <td class="pading">(<%= dog.breed %>)</td>
-            <td class="pading"><%= link_to 'Montrer', dog %></td>
-            <td class="pading"><%= link_to 'Editer', edit_dog_path(dog) %></td>
-            <td class="pading"><%= link_to 'Supprimer', dog, method: :delete, data: { confirm: 'Etes vous sur ?' } %></td>
+            <td class="pading"><%= link_to 'Montrer', dog, class: 'btn btn-primary btn-xs' %></td>
+            <td class="pading"><%= link_to 'Editer', edit_dog_path(dog), class: 'btn btn-primary btn-xs' %></td>
+            <td class="pading"><%= link_to 'Supprimer', dog,
+                                    method: :delete, data: { confirm: 'Etes vous sur ?' },
+                                    class: 'btn btn-primary btn-xs' %></td>
         </tr>
       <% end %>
     </tbody>
@@ -30,7 +32,7 @@
   
   <br>
   
-  <%= link_to 'Nouveau chien', new_dog_path %>
+  <%= link_to 'Nouveau chien', new_dog_path, class: 'btn btn-success navbar-btn' %>
   </div>
    </div>
 </div>
