@@ -60,6 +60,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'mailboxer'
 
-
+#Moteur de recherche
+gem 'ransack'
 
 ruby '2.3.0'
