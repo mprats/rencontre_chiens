@@ -7,6 +7,18 @@ class DogsController < ApplicationController
   def index
     @dogs = current_user.dogs
   end
+  
+  def results
+    @q = Dog.ransack(params[:q])
+    # @dogs = @q.result(distinct: true)
+    @dogs = @q.result.includes( :user )
+  end
+  
+  def search
+    @q = Dog.ransack(params[:q])
+    # @dogs = @q.result(distinct: true)
+    @dogs = @q.result.includes( :user )
+  end 
 
   # GET /dogs/1
   # GET /dogs/1.json
@@ -90,4 +102,9 @@ class DogsController < ApplicationController
     def dog_params
       params.require(:dog).permit(:name, :breed, :birthdate, :gender)
     end
+    
+    # #calcule d'age 
+    # def age
+    #   ret = (DateTime:current - @dog.birthdate)/3
+    # end 
 end

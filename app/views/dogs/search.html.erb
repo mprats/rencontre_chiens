@@ -1,0 +1,41 @@
+<div class="background-home">
+  </br>
+  </br>
+  </br>
+  </br>
+  <div class="container" >
+  <div class="welcome_shearch">
+    <h2>Recherche de partenaire Canin Avancé!</h2>
+    <%= search_form_for @q, url: results_dogs_path do |f| %>
+  
+        <div class="input-group">
+          
+          <div class="field">
+            <%= f.label :Nom %><br>
+            <%= f.search_field :name_cont, class: 'form-control' %>
+          </div>
+          
+          <div class="field">
+            <%= f.label :Race %><br>
+            <%= f.search_field :breed_cont, class: 'form-control' %>
+          </div>
+          
+          
+          <div class="field">
+            <%= f.label :Genre %><br>
+            <%= f.select :gender_cont, ['M','F'] %>
+          </div>
+          
+          <div class="field">
+            <%= f.label :Localisation %><br>
+            <%= f.search_field :user_postal_code_cont, class: 'form-control' %>
+          </div>
+          
+          
+          <%= f.submit 'Valider', class: 'btn btn-success navbar-btn' %>
+        </div>
+    <% end %>
+          <br>
+  </div>
+ </div>
+</div>

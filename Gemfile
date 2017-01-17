@@ -60,6 +60,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'mailboxer'
 
+#Moteur de recherche
+gem 'ransack'
+
 gem "paperclip", "~> 5.0.0"
 
 

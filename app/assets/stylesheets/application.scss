@@ -23,6 +23,7 @@
     margin: 0 auto;
     padding: 0;
     background: asset-url('chien_home.jpeg');
+    background-attachment: fixed;
     -webkit-background-size: cover;
     background-size: cover;
     height :800px;
@@ -79,6 +80,7 @@
     flex-direction: column;
     background-color: #222;
     flex: 1 0 auto;
+    position : fixed;
 }
 
 .align_page
@@ -94,4 +96,28 @@
 .pading
 {
     padding-left: 15px;
+}
+
+.title_page
+{
+    margin-top: 0px;
+    padding-top: 0px;
+    color: #fff;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.brique_chien
+{   
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+    border-radius: 6px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    margin-bottom: 30px;
+    color: #fff;
+    background-color: #2229;
+    box-sizing: border-box;
 }

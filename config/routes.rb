@@ -14,10 +14,18 @@ Rails.application.routes.draw do
     resources :pictures, :only => [:destroy]
   end
   
+  resources :dogs do
+    collection do
+      get 'results'
+      get 'search'
+    end
+
   resources :conversations do
     resources :messages
   end
 
+ 
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
