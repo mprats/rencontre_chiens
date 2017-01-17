@@ -20,15 +20,17 @@
             <%= f.search_field :breed_cont, class: 'form-control' %>
           </div>
           
-          <div class="field">
-            <%= f.label :Date %><br>
-            <%= f.search_field :birthdate_cont, class: 'form-control' %>
-          </div>
           
           <div class="field">
             <%= f.label :Genre %><br>
             <%= f.select :gender_cont, ['M','F'] %>
           </div>
+          
+          <div class="field">
+            <%= f.label :Localisation %><br>
+            <%= f.search_field :user_postal_code_cont, class: 'form-control' %>
+          </div>
+          
           
           <%= f.submit 'Valider', class: 'btn btn-success navbar-btn' %>
         </div>

@@ -10,12 +10,14 @@ class DogsController < ApplicationController
   
   def results
     @q = Dog.ransack(params[:q])
-    @dogs = @q.result(distinct: true)
+    # @dogs = @q.result(distinct: true)
+    @dogs = @q.result.includes( :user )
   end
   
   def search
     @q = Dog.ransack(params[:q])
-    @dogs = @q.result(distinct: true)
+    # @dogs = @q.result(distinct: true)
+    @dogs = @q.result.includes( :user )
   end 
 
   # GET /dogs/1
@@ -87,7 +89,6 @@ class DogsController < ApplicationController
     
     # #calcule d'age 
     # def age
-    #   ret = (DateTime:current - @dog.birthdate)/365
-    #   return ret
+    #   ret = (DateTime:current - @dog.birthdate)/3
     # end 
 end
