@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   
   resources :users, :only => [:show]
   
-  resources :dogs
+  resources :dogs do
+    resources :pictures, :only => [:destroy]
+  end
   
   resources :conversations do
     resources :messages

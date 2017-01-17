@@ -11,6 +11,7 @@ class DogsController < ApplicationController
   # GET /dogs/1
   # GET /dogs/1.json
   def show
+    @pictures = @dog.pictures
   end
 
   # GET /dogs/new
@@ -20,6 +21,7 @@ class DogsController < ApplicationController
 
   # GET /dogs/1/edit
   def edit
+    @pictures = @dog.pictures
   end
 
   # POST /dogs
@@ -30,6 +32,13 @@ class DogsController < ApplicationController
 
     respond_to do |format|
       if @dog.save
+        
+        if params[:images]
+          params[:images].each { |image|
+            @dog.pictures.create(image: image)
+          }
+        end
+        
         format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
         format.json { render :show, status: :created, location: @dog }
       else
@@ -44,6 +53,13 @@ class DogsController < ApplicationController
   def update
     respond_to do |format|
       if @dog.update(dog_params)
+        
+        if params[:images]
+          params[:images].each { |image|
+            @dog.pictures.create(image: image)
+          }
+        end
+        
         format.html { redirect_to @dog, notice: 'Dog was successfully updated.' }
         format.json { render :show, status: :ok, location: @dog }
       else
