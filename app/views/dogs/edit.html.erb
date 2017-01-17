@@ -11,7 +11,7 @@
               <% @pictures.each do |pic| %>
                 <div>
                   <%= image_tag pic.image.url %><br />
-                  <%= link_to 'Delete', dog_picture_path(@dog, pic), method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <%= link_to 'Supprimer la photo', dog_picture_path(@dog, pic), method: :delete, data: { confirm: 'Etes vous sur ?' } %>
                 </div>
               <% end %>
             <% end %>
