@@ -11,28 +11,28 @@
     </div>
   <% end %>
   
-  <div class="field">
-    <%= f.label :Nom %><br>
+  <%= f.label :Nom %><br>
+  <div class="white-po">
     <%= f.text_field :name %>
   </div>
   
-  <div class="field">
-    <%= f.label :Race %><br>
+  <%= f.label :Race %><br>
+  <div class="white-po">
     <%= f.text_field :breed %>
   </div>
   
-  <div class="field">
-    <%= f.label :Date_de_Naissance %><br>
+  <%= f.label :Date_de_Naissance %><br>
+  <div class="white-po">
     <%= f.date_select :birthdate, {order: [:day, :month, :year], prompt: { day: 'Jour', month: 'Mois', year: 'Année' }, start_year: Date.today.year, end_year: Date.today.year - 50} %>
   </div>
   
-  <div class="field">
-    <%= f.label :Genre %><br>
+  <%= f.label :Genre %><br>
+  <div class="white-po">
     <%= f.select :gender, ['Male', 'Femelle'] %>
   </div>
   
   <div class="control-group">
-    <%= f.label :pictures, :class => 'control-label' %>
+    <%= f.label :Ajouter_des_photos, :class => 'control-label' %>
     <div class="controls">
       <%= file_field_tag "images[]", type: :file, multiple: true %>
     </div>

@@ -14,21 +14,21 @@
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
       
-      <%= f.label :Mots_de_passe %> <i>(laisser blanc si vous ne voulez)</i><br />
+      <%= f.label :Mot_de_passe %> <i>(laissez vide si vous ne voulez pas changer de mot de passe)</i><br />
+      
       <div class="white-po">
         <%= f.password_field :password, autocomplete: "off" %>
-        <% if @minimum_password_length %>
-          <br />
-          <em><%= @minimum_password_length %> characters minimum</em>
-        <% end %>
       </div>
+      <% if @minimum_password_length %>
+        <em><%= @minimum_password_length %> caractères minimum</em><br>
+      <% end %>
     
-      <%= f.label :Confirmation_mots_de_passe %><br />
+      <%= f.label :Confirmation_mot_de_passe %> <i>(laissez vide si vous ne voulez pas changer de mot de passe)</i><br />
       <div class="white-po">
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
     
-      <%= f.label :Mots_de_passe_actuelle %> <i>(si vous voulez changez de mots de passe)</i><br />
+      <%= f.label :Mot_de_passe_actuel %><br />
       <div class="white-po">
         <%= f.password_field :current_password, autocomplete: "off" %>
       </div>
@@ -45,7 +45,7 @@
       
       <%= f.label :Date_de_naissance %><br>
       <div class="white-po">
-        <%= f.date_select :birthdate, {order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year - 120} %>
+        <%= f.date_select :birthdate, {order: [:day, :month, :year], prompt: { day: 'Jour', month: 'Mois', year: 'Année' }, start_year: Date.today.year, end_year: Date.today.year - 120} %>
       </div>
       
       <%= f.label :Numero_de_telephone %><br>
@@ -55,7 +55,7 @@
       
       <%= f.label :Genre %><br>
       <div class="white-po">
-        <%= f.select :gender, ['Male', 'Female'] %>
+        <%= f.select :gender, ['Homme', 'Femme'] %>
       </div>
       
       <%= f.label :Pays %><br>
@@ -68,7 +68,7 @@
         <%= f.text_field :street %>
       </div>
       
-      <%= f.label :Code_postale %><br>
+      <%= f.label :Code_postal %><br>
       <div class="white-po">
         <%= f.text_field :postal_code %>
       </div>

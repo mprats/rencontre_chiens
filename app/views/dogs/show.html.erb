@@ -35,14 +35,19 @@
               <div>
                 <%= image_tag pic.image.url %>
               </div>
+              <br>
             <% end %>
           <% end %>
         
         <% end %>
         
-        <% if user_signed_in? and (current_user.id == @dog.user_id) %>
-            <%= link_to 'Editer', edit_dog_path(@dog) %> |
+        <% if user_signed_in? %>
+            <% if (current_user.id == @dog.user_id) %>
+                <%= link_to 'Editer', edit_dog_path(@dog), class: 'btn btn-primary btn-xs' %> |
+            <% else %>
+                <%= link_to "Contacter le propriétaire", conversations_path(sender_id: current_user.id, recipient_id: @dog.user_id), method: "post", class: 'btn btn-primary btn-xs'%> |
+            <% end %>
         <% end %>
-        <%= link_to 'Retour', dogs_path %>
+        <%= link_to 'Retour', dogs_path, class: 'btn btn-primary btn-xs' %>
     </div>
 </div>
