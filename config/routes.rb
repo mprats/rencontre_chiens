@@ -6,8 +6,24 @@ Rails.application.routes.draw do
   end
 
   root 'welcome#index'
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'users/registrations' }
+  
+  resources :users, :only => [:show]
+  
+  resources :dogs do
+    resources :pictures, :only => [:destroy]
+    collection do
+      get 'results'
+      get 'search'
+    end
+  end
 
+  resources :conversations do
+    resources :messages
+  end
+
+ 
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -62,4 +78,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
+  
 end

@@ -1,0 +1,39 @@
+<div class ="background-home">
+    <br>
+        <h1 class="title_page">Résultat sur Race</h1>
+        <%= search_form_for(@q) do |f| %>
+        <% end %>
+        <% @dogs.each do |dg| %>
+            <div class = "brique_chien">
+                <tr>
+                    <p>
+                        <strong>Nom :</strong>
+                        <td><%= dg.name%></td>
+                    </p>
+                    
+                    </p>
+                        <strong>Race :</strong>
+                        <td><%= dg.breed%></td>
+                    <p>
+                    
+                    <p>
+                        <strong>Date de Naissance :</strong>
+                        <td><%= dg.birthdate%></td>
+                    </p>
+                    
+                    <p>
+                        <strong>Genre :</strong>
+                        <td><%= dg.gender%></td>
+                    </p>
+                    
+                    
+                    <p>
+                        <strong>Localisation :</strong>
+                        <td><%= dg.user.postal_code%></td>
+                    </p>
+
+                </tr>
+            </div>
+        <%end %>
+    </div>
+</div>

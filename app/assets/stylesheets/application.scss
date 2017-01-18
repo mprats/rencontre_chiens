@@ -16,3 +16,114 @@
 
 @import "bourbon";
 @import "welcome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.background-home {
+    margin: 0 auto;
+    padding: 0;
+    background: asset-url('chien_home.jpeg');
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height :800px;
+    margin-bottom: 0px;
+}
+
+.nav-bar-unmargin-bottom 
+{
+    background-color: #222;
+    color: #fff;
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+}
+
+.text_white
+{
+    color: #fff;
+}
+
+.text_white_logo
+{
+    float: left;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 50px;
+    color: #fff;
+}
+
+.text_white_logo:hover
+{
+    color: #fff;
+}
+
+.welcome_shearch
+{   
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 6px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    color: #fff;
+    background-color: #2229;
+    box-sizing: border-box;
+}
+
+.footer
+{
+    display: flex;
+    min-height: 12vh;
+    flex-direction: column;
+    background-color: #222;
+    flex: 1 0 auto;
+    position : fixed;
+}
+
+.align_page
+{
+    margin: 0 auto;
+    padding: 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height :800px;
+    margin-bottom: 0px;
+}
+
+.pading
+{
+    padding-left: 15px;
+}
+
+.title_page
+{
+    margin-top: 0px;
+    padding-top: 0px;
+    color: #fff;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.brique_chien
+{   
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+    border-radius: 6px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    margin-bottom: 30px;
+    color: #fff;
+    background-color: #2229;
+    box-sizing: border-box;
+}
+
+.white-po
+{
+    color: #414141;
+}

@@ -1,0 +1,38 @@
+<div class ="background-home">
+  <div class="container">
+  <p id="notice"><%= notice %></p>
+  
+
+  <br>
+  <div class="welcome_shearch">
+    <h1>Vos chiens</h1>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+  
+  
+    <tbody>
+      <% @dogs.each do |dog| %>
+        <tr>
+            <td><%= dog.name %></td>
+            <td class="pading">(<%= dog.breed %>)</td>
+            <td class="pading"><%= link_to 'Montrer', dog, class: 'btn btn-primary btn-xs' %></td>
+            <td class="pading"><%= link_to 'Editer', edit_dog_path(dog), class: 'btn btn-primary btn-xs' %></td>
+            <td class="pading"><%= link_to 'Supprimer', dog,
+                                    method: :delete, data: { confirm: 'Etes vous sur ?' },
+                                    class: 'btn btn-primary btn-xs' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+ 
+  
+  <br>
+  
+  <%= link_to 'Nouveau chien', new_dog_path, class: 'btn btn-success navbar-btn' %>
+  </div>
+   </div>
+</div>

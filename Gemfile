@@ -32,9 +32,6 @@ gem 'rails_12factor', group: :production
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# DESIGN
-gem 'bootstrap-sass', '~> 3.3.6'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -57,5 +54,16 @@ gem 'mailgun-ruby', '~>1.1.2'
 gem "administrate", "~> 0.3.0"
 
 gem "bourbon"
+
+# DESIGN
+gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'mailboxer'
+
+#Moteur de recherche
+gem 'ransack'
+
+gem "paperclip", "~> 5.0.0"
+
 
 ruby '2.3.0'
