@@ -28,8 +28,9 @@
                 <%= @user.postal_code %>
             </p>
             
-            
-            <%= link_to "Contacter", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: "post", class: 'btn btn-primary btn-xs'%>
+            <% if user_signed_in? and !(current_user.id == @user.id) %>
+                <%= link_to "Contacter", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: "post", class: 'btn btn-primary btn-xs'%>
+            <% end %>
         </div>
     </div>
 </div>
