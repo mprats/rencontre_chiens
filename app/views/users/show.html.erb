@@ -1,2 +1,40 @@
-<%= @user.email %>
-<%= link_to "Contacter", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: "post"%>
+<div class ="background-home">
+    <div class="container">
+        </br>
+        <div class = "welcome_shearch">
+            
+            <p>
+                <strong>Prénom :</strong>
+                <%= @user.first_name %>
+            </p>
+            
+            <p>
+                <strong>Age :</strong>
+                <%= pluralize(@age, "an") %>
+            </p>
+            
+            <p>
+                <strong>Genre :</strong>
+                <%= @user.gender %>
+            </p>
+            
+            <p>
+                <strong>Pays :</strong>
+                <%= @user.country %>
+            </p>
+            
+            <p>
+                <strong>Rue :</strong>
+                <%= @user.street %>
+            </p>
+            
+            <p>
+                <strong>Code postal :</strong>
+                <%= @user.postal_code %>
+            </p>
+            
+            
+            <%= link_to "Contacter", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: "post", class: 'btn btn-primary btn-xs'%>
+        </div>
+    </div>
+</div>
