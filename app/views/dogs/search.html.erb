@@ -10,25 +10,24 @@
   
         <div class="input-group">
           
-          <div class="field">
-            <%= f.label :Nom %><br>
+          <%= f.label :Nom %><br>
+          <div class="white-po">
             <%= f.search_field :name_cont, class: 'form-control' %>
           </div>
           
-          <div class="field">
-            <%= f.label :Race %><br>
+          <%= f.label :Race %><br>
+          <div class="white-po">
             <%= f.search_field :breed_cont, class: 'form-control' %>
           </div>
           
 
-          
-          <div class="field">
-            <%= f.label :Genre %><br>
+          <%= f.label :Genre %><br>
+          <div class="white-po">
             <%= f.select :gender_cont, ['M','F'] %>
           </div>
           
-          <div class="field">
-            <%= f.label :Localisation %><br>
+          <%= f.label :Localisation %><em> code postale</em><br>
+          <div class="white-po">
             <%= f.search_field :user_postal_code_cont, class: 'form-control' %>
           </div>
           

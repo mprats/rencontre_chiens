@@ -17,8 +17,9 @@
                     <p>
                     
                     <p>
-                        <strong>Date de Naissance :</strong>
-                        <td><%= dg.birthdate%></td>
+                        <strong>Age :</strong>
+                          <% @age = Date.today.year - dg.birthdate.year %>
+                          <%= @age -= 1 if Date.today < dg.birthdate + @age.years %>
                     </p>
                     
                     <p>
@@ -31,6 +32,8 @@
                         <strong>Localisation :</strong>
                         <td><%= dg.user.postal_code%></td>
                     </p>
+                    
+                    <td class="pading"><%= link_to 'Montrer', dg, class: 'btn btn-primary btn-xs' %></td>
 
                 </tr>
             </div>
